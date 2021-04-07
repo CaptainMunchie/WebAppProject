@@ -6,6 +6,8 @@ import NewBookScreen from './app/screens/NewBookScreen';
 import {NavigationContainer} from '@react-navigation/native'
 import AuthNavigator from './app/navigation/AuthNavigator';
 import TabNavigator from './app/navigation/TabNavigator';
+import TestNavigator from './app/navigation/TestNavigator';
+
 
 // import RegisterScreen from './app/screens/RegisterScreen';
 // import LoginScreen from './app/screens/LoginScreen';
@@ -30,9 +32,13 @@ export default function App() {
     // <HomeScreen/>
     // <MyBooksScreen/>
     // <MyAuthorScreen/>
+
     <NavigationContainer>
       <AuthNavigator/>
+      
     </NavigationContainer>
+
+    // <NewBookScreen/>
 
     // <RegisterScreen></RegisterScreen>
     // <LoginScreen></LoginScreen>

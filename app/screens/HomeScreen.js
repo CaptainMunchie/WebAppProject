@@ -7,13 +7,16 @@ import AppColors from '../config/AppColors';
 import AppListItem from '../components/AppListItem';
 import AppScreen from '../components/AppScreen';
 import AppIcon from '../components/AppIcon';
+import AppText from '../components/AppText';
 
 
 
 
-function HomeScreen(props) {
+function HomeScreen({navigation, route}) {
+    // console.log(route.params);
     return (
         <AppScreen style={styles.container}>
+            {/* <AppText style={styles.message}>{route.params.message}</AppText> */}
             <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
                         name="account"
@@ -23,11 +26,11 @@ function HomeScreen(props) {
 
             </View>
             <View style={styles.ProfileContainer}>
-                <AppListItem image={require("../assets/profile.jpg")} title="Medusa" subtitle="Medusa@gmail.com"/>
+                <AppListItem image={route.params.paramImage} title={route.params.paramName} subtitle={route.params.paramEmail}/>
             </View>
             <View style={styles.LinksContainer}>
-                <AppListItem title="My Books" IconComponent={<AppIcon name="book-open-variant" size={50} iconColor={AppColors.otherColor} backgroundColor={AppColors.primaryColor}/> }/>
-                <AppListItem title="My Authors" IconComponent={<AppIcon name="account-heart" size={50} iconColor={AppColors.otherColor} backgroundColor={AppColors.primaryColor}/> }/>
+                <AppListItem title="My Books" IconComponent={<AppIcon name="book-open-variant" size={50} iconColor={AppColors.otherColor} backgroundColor={AppColors.primaryColor}/> } onPress={() => navigation.navigate("Books")}/>
+                <AppListItem title="My Authors" IconComponent={<AppIcon name="account-heart" size={50} iconColor={AppColors.otherColor} backgroundColor={AppColors.primaryColor}/> } onPress={() => navigation.navigate("MyAuthors")}/>
             </View>
             {/* <AppIcon name="coffee" size={40} iconColor="black" backgroundColor="white"/> */}
         </AppScreen>
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
         // flex: 1,
         backgroundColor: AppColors.otherColor,
         // padding:25,
-        marginTop:0,
+        // marginTop:0,
     },
     welcomeContainer:{
         
@@ -60,6 +63,9 @@ const styles = StyleSheet.create({
         height:150,
         justifyContent:"space-around",
         paddingLeft: 10,
-    }
+    },
+    // message:{
+    //     paddingTop:25,
+    // }
 })
 export default HomeScreen;

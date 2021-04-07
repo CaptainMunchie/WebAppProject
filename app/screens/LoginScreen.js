@@ -9,6 +9,7 @@ import AppScreen from '../components/AppScreen';
 import AppTextInput from '../components/AppTextInput';
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
+import DataManager from '../config/DataManager';
 
 
 const validation = Yup.object().shape(
@@ -20,23 +21,37 @@ const validation = Yup.object().shape(
 
 const users = [
     {
+        id: "user1",
         name: "Medusa Gorgon",
         email: "medusa@gmail.com",
         password: "1234",
+        image: require('../assets/profile.jpg')
     },
     {
+        id: "user2",
         name: "Spartan Soldier",
         email: "spartan@gmail.com",
         password: "1234",
+        image: require('../assets/profile1.jpg')
     },
 
 ];
 
 const validateUser = ({email, password}) => {
-    return(
-        users.filter((user) => user.email === email && user.password === password).length>0
-    );
+    return users.filter((user) => user.email === email && user.password === password).length>0
+    
 };
+
+const getUser = ({email}) => {
+    return users.find((user) => user.email === email);
+}
+
+const createUser = ({email}) => {
+    let commonData = DataManager.getInstance();
+    let userID = getUser({email}).id;
+    commonData.setUserID(userID);
+
+}
 
 function LoginScreen({navigation}) {
 
@@ -55,10 +70,22 @@ function LoginScreen({navigation}) {
                 initialValues={{email:'', password:'',}}
                 onSubmit = {(values, {resetForm}) => {
                             if(validateUser(values)){
-                            console.log(values);
+                            console.log(getUser(values));
                             resetForm();
-                            navigation.navigate("Home");
-                        }
+                            createUser(values);
+                            navigation.navigate("Home", {
+                                screen: "Home",
+                                params: {
+                                    screen: "Home",
+                                    params: {
+                                        paramEmail: values.email,
+                                        paramName: getUser(values).name,
+                                        paramImage: getUser(values).image,
+                                    },
+                                    
+                                }
+                            });
+                        } 
                         else{
                             resetForm();
                             alert("Invalid Login Details")
