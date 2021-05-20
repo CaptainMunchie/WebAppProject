@@ -15,25 +15,25 @@ function WelcomeScreen({navigation}) {
     return (
         <AppScreen>
             <ImageBackground
-            source={require("../assets/background.jpg")}
+            source={require("../assets/background2.jpg")}
             style={styles.background}
             blurRadius={blurRadiusValue}
             >
 
                 <View style={styles.welcomeContainer}>
                     <MaterialCommunityIcons
-                        name="account"
+                        name="map"
                         size={68}
-                        color={AppColors.white}
+                        color={AppColors.black}
                     />
 
-                    <AppText style={{color:"white", fontSize:30}}>Night Cafe Chill</AppText>
+                    <AppText style={{color:"black", fontSize:30, fontWeight:"bold"}}>Personal Exploration</AppText>
 
                 </View>
 
                 <View style={styles.bottonsContainer}>
-                    <AppButton title="login" onPress={() => navigation.navigate("Login")}/>
-                    <AppButton title="Register" color="secondaryColor" onPress={() => navigation.navigate("Register")}/>
+                    <AppButton title="login" color="green"  onPress={() => navigation.navigate("Login")}/>
+                    <AppButton title="Register" color="brown" onPress={() => navigation.navigate("Register")}/>
 
                 </View>
                 

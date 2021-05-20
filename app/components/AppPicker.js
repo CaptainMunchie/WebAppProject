@@ -19,6 +19,7 @@ function AppPicker({data, icon, placeholder, numColumns, selectedItem, onSelectI
                     <MaterialCommunityIcons name="chevron-down" size={26}/>
                 </View>
             </TouchableWithoutFeedback>
+
             <Modal visible={modalVisible} animationType="slide">
                 <AppScreen>
                     <Button title="close" onPress={() => setModalVisible(false)}/>
@@ -53,7 +54,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 10,
         marginVertical: 20,
-        width: '100%'
+        width: '100%',
+        
     },
     text:{
         color: 'black',
@@ -62,6 +64,9 @@ const styles = StyleSheet.create({
         // fontFamily: Platform.OS ==='android' ? "monospace" : "Cochin",
         // marginLeft: 10,
         flex: 1,
+        
+        
+
     }
 })
 

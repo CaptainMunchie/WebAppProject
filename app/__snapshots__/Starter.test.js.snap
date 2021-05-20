@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnapShot expect for no changes 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "fontFamily": "Cochin",
+        "fontSize": 20,
+        "justifyContent": "center",
+        "paddingLeft": 10,
+      },
+      undefined,
+    ]
+  }
+/>
+`;

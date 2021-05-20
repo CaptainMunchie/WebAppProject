@@ -28,56 +28,10 @@ import TestNavigator from './app/navigation/TestNavigator';
 
 export default function App() {
   return (
-    // <NewBookScreen/>
-    // <HomeScreen/>
-    // <MyBooksScreen/>
-    // <MyAuthorScreen/>
-
     <NavigationContainer>
-      <AuthNavigator/>
-      
+      <AuthNavigator/>      
     </NavigationContainer>
-
-    // <NewBookScreen/>
-
-    // <RegisterScreen></RegisterScreen>
-    // <LoginScreen></LoginScreen>
-    // <WelcomeScreen></WelcomeScreen>
-    // <TestScreen></TestScreen>
-
-    // <AppScreen style={styles.container}>
-    //   <MaterialCommunityIcons
-    //   name="account"
-    //   size={68}
-    //   color={AppColors.primaryColor}
-    //   />
-    //   <AppText>Hello World!</AppText>
-    //   <Text>Hello World!</Text>
-    //   <AppButton title="Click here"></AppButton>
-
-    // </AppScreen>
-    
-    // <View style={styles.container}>
-    //   <MaterialCommunityIcons
-    //   name="account"
-    //   size={68}
-    //   color={AppColors.primaryColor}
-    //   />
-    //   <AppText>Hello World!</AppText>
-    //   <Text>Hello World!</Text>
-    //   <AppButton title="Click here"></AppButton>
-
-    // </View>
   );
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: AppColors.otherColor,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-    
-//   },
 
-// });

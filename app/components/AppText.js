@@ -10,14 +10,12 @@ function AppText({style, children}) {
 
 const styles = StyleSheet.create({
     text:{
-        // color: 'black',
-        // fontWeight: 'bold',
         fontSize: 20,
         fontFamily: Platform.OS ==='android' ? "monospace" : "Cochin",
         paddingLeft:10,
         justifyContent:"center",
         alignItems:"center",
-        // bottom:2,
+        
         
     },  
 })

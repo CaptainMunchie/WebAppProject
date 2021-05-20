@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "comp3130wk2",
-    "slug": "comp3130wk2",
+    "name": "WebAppProjectCOMP3130",
+    "slug": "webappprojectcomp3130",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": "This Personal Exploration is about journalling down your adventures."
   }
 }

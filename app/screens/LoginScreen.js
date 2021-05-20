@@ -19,13 +19,16 @@ const validation = Yup.object().shape(
     }
 );
 
+
+
 const users = [
     {
         id: "user1",
         name: "Medusa Gorgon",
         email: "medusa@gmail.com",
         password: "1234",
-        image: require('../assets/profile.jpg')
+        image: require('../assets/profile.jpg'),
+        description: "You only have to look at the Medusa straight on to see her. And she’s not deadly. She’s beautiful and she’s laughing",
     },
     {
         id: "user2",
@@ -53,8 +56,10 @@ const createUser = ({email}) => {
 
 }
 
-function LoginScreen({navigation}) {
 
+
+function LoginScreen({navigation}) {
+    
 
     return (
         <AppScreen style={styles.container}>
@@ -81,6 +86,7 @@ function LoginScreen({navigation}) {
                                         paramEmail: values.email,
                                         paramName: getUser(values).name,
                                         paramImage: getUser(values).image,
+                                        paramDescription: getUser(values).description,
                                     },
                                     
                                 }

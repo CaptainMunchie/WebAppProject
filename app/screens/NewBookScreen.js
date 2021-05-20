@@ -11,9 +11,9 @@ import * as ImagePicker from 'expo-image-picker';
 import AppIcon from '../components/AppIcon';
 
 const categories = [
-    {label: "Adventure", value:1, icon:"airplane-takeoff", backgroundColor:"red"},
-    {label: "Thriller", value:2, icon:"ghost", backgroundColor:"blue"},
-    {label: "Fiction", value:3, icon:"flash", backgroundColor:"green"},
+    {label: "Travel", value:1, icon:"airplane-takeoff", backgroundColor:"red"},
+    {label: "Eating", value:2, icon:"food", backgroundColor:"blue"},
+    {label: "Discovery", value:3, icon:"magnify", backgroundColor:"green"},
 
 ];
 
@@ -50,7 +50,7 @@ function NewBookScreen({navigation}) {
 
     const doErrorCheck = () => {
         // console.log(title, subTitle, category.label)
-        setTitleError( title.length>0 ? "": "PLease set a valid Book Title");
+        setTitleError( title.length>0 ? "": "PLease set a valid Title");
         setSubTitleError( subTitle.length>0 ? "": "PLease set a valid subtitle");
         setCategoryError( category? "": "PLease pick a category from the list");
         setImageError( image? "": "PLease pick an image");
@@ -67,7 +67,7 @@ function NewBookScreen({navigation}) {
             title: title,
             subtitle: subTitle,
             category: category.label,
-            bookid: bookID,
+            id: bookID,
             userid: user,
             image: image.path,
 
@@ -82,8 +82,8 @@ function NewBookScreen({navigation}) {
     return (
         <AppScreen style={{backgroundColor:AppColors.otherColor, padding:10,}}>
             <AppTextInput
-                icon="book-open-page-variant"
-                placeholder="Book Title"
+                icon="map"
+                placeholder="Title"
                 value={title}
                 onChangeText={(inputText) => setTitle(inputText)}
             />
@@ -91,8 +91,8 @@ function NewBookScreen({navigation}) {
             {titleError.length>0 ? <AppText style={{margin:5, color:"red", fontsize:16}}>{titleError}</AppText>: <></>}
 
             <AppTextInput
-                icon="calendar-month"
-                placeholder="Book Read on"
+                icon="note"
+                placeholder="description"
                 value={subTitle}
                 onChangeText={(inputText) => setSubTitle(inputText)}
             />
@@ -123,12 +123,12 @@ function NewBookScreen({navigation}) {
             {imageError.length>0 ? <AppText style={{margin:5, color:"red", fontsize:16}}>{imageError}</AppText>: <></>}
 
             <AppButton
-                title="Add Book"
+                title="Add Location"
                 onPress={
                     () => {
                     if(doErrorCheck()){
                         addBook();
-                        navigation.navigate("MyBooks");
+                        navigation.navigate("Travels");
                     }
                     
                 }      

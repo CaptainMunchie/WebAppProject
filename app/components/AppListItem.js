@@ -4,9 +4,11 @@ import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 import AppColors from '../config/AppColors';
 import AppText from './AppText';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
+import AppIcon from './AppIcon';
 
 
-function AppListItem({image, title, subtitle, IconComponent, onPress, onSwipLeft}) {
+function AppListItem({image, iconTitle, title, iconSubtitle, subtitle, IconComponent, onPress, onSwipLeft}) {
     return (
         <Swipeable renderRightActions={onSwipLeft}>
             <TouchableHighlight onPress={onPress} underlayColor={AppColors.otherColorLite}>
@@ -14,8 +16,20 @@ function AppListItem({image, title, subtitle, IconComponent, onPress, onSwipLeft
                     {IconComponent}
                     {image && <Image source={image} style={styles.image}/>}
                     <View style={styles.TextContainer}>
-                        <AppText style={styles.title}>{title}</AppText>
-                        {subtitle && <AppText style={styles.subtitle}>{subtitle}</AppText>}
+                        
+                        {/* {icon && <AppIcon name={icon} iconColor={AppColors.black} style={styles.icon}/>} */}
+                        <AppText style={styles.title}>
+                            <AppText>{iconTitle && <MaterialCommunityIcons name={iconTitle} size={30}/>}  </AppText>
+                                           
+                            {title}
+                        </AppText>
+                        
+
+
+                        {subtitle && <AppText style={styles.subtitle}>
+                            <AppText>{iconSubtitle && <MaterialCommunityIcons name={iconSubtitle} size={30}/>}  </AppText>
+                            {subtitle}
+                        </AppText>}
                     </View>
                     
                 </View>
@@ -38,13 +52,19 @@ const styles = StyleSheet.create({
     TextContainer:{
         flexDirection: "column",
         marginLeft: 20,
+        
     },
     title:{
         fontWeight:"bold",
         marginVertical:5,
+        flexDirection:"row",
     },
     subtitle:{
         fontSize:15,
+    },
+    icon:{
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
 export default AppListItem;

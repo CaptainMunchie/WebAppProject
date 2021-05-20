@@ -5,37 +5,39 @@ export default class DataManager {
     books = [
         {
             userid: "user1",
-            bookid: 1,
+            id: 1,
             title:"Lofi Chill",
             subtitle:"Read on 3rd of March, 2021",
             image: require("../assets/cover1.jpg"),
-            category: "Fiction",
+            category: "Travel",
         },
         {
             userid: "user1",
-            bookid: 2,
+            id: 2,
             title:"Spartan's Birth",
             subtitle:"Read on 13rd of May, 2011",
             image: require("../assets/cover2.jpg"),
-            category: "Fiction",
+            category: "Eating",
         },
         {
             userid: "user1",
-            bookid: 3,
+            id: 3,
             title:"The Creation of the Cosmo",
             subtitle:"Read on 16rd of May, 2014",
             image: require("../assets/cover3.jpg"),
-            category: "Fiction",
+            category: "Discovery",
         },
         {
             userid: "user2",
-            bookid: 1,
+            id: 1,
             title:"Lofi Chill",
             subtitle:"Read on 3rd of March, 2021",
             image: require("../assets/cover1.jpg"),
-            category: "Fiction",
+            category: "Travel",
         },
-    ]
+    ];
+
+    
 
     static getInstance(){
         if(DataManager.myInstance==null){
@@ -59,4 +61,7 @@ export default class DataManager {
     addBook(book){
         this.books.push(book);
     }
+
+    
+    
 }

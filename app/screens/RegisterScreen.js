@@ -58,7 +58,31 @@ function RegisterScreen(props) {
             </View>
             <AppButton title="login" onPress={() => console.log(userName, email, password)}/>
         </AppScreen>
+// function RegisterScreen(props) {
 
+//     const [userName, setUserName] = useState();
+//     const [email, setEmail] = useState();
+//     const [password, setPassword] = useState();
+
+    
+//     const initialValues = {
+//         userName:'',
+//         email: '',
+//         password: '',
+//         confirmPassword: '',
+//     }
+
+//     const validationSchema = Yup.object({
+//         userName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
+//         email: Yup.string().email('Invalid email format').required('Required'),
+//         password: Yup.string().required('Required'),
+//         // confirmPassword: Yup.string().oneOf([Yup.ref('password'), ''], 'Passwords must math').required('Required')
+
+//     })
+
+//     const onSubmit = values => {
+//         console.log('Form data', values)
+//     }
     );
 }
 

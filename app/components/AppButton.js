@@ -21,9 +21,11 @@ const styles = StyleSheet.create({
         padding: 15,
         justifyContent: 'center',
         alignItems: 'center',
+       
     },
     text:{
-        color: AppColors.otherColor,
+        // color: AppColors.otherColor,
+        color: AppColors.white,
         fontSize: 16,
         textTransform:'uppercase',
         fontWeight: 'bold',
